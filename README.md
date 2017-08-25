@@ -96,7 +96,7 @@ We will build this circuit:
 
 Type into the command line (line after line):
 
-```
+```bash
 $ sudo su
 # python
 >>> import RPi.GPIO as GPIO
@@ -131,26 +131,26 @@ You can either donwload them on your Raspberry Pi and place them in **'/home/osm
 
 The first way is easy and is already explained. The second way is also not that hard to do.  
 In your command line type:
-```
+```bash
 $ sudo su
 # nano /home/osmc/example.py
 ```
 
 Put for 'example.py' every name in that you want. Just make sure that it is ending with '.py'.  
 Now you've opened a python script in the file editor 'Nano'.  You can write into this file one code which is in this repository. For every script that is in this repository (right now there are five) you need to make a new python script with:
-```
+```bash
 $ sudo su
 # nano /home/osmc/example.py
 ```
 
 When you wrote one code into one script you can save that code with **CTRl+X** and press enter if you don't want to change the name of the script.
 After this you have to change the file permissions. Type:
-```
+```bash
 # chmod +x /home/osmc/*.py
 ```
 
 If you want to test the script type into the command line:
-```
+```bash
 #  python /home/osmc/example.py
 ```
 
@@ -160,12 +160,12 @@ If the button does what it should do, then you go on with this guide.
 
 To let the script run on startup, in order to use it right after you started OSMC, we need to change the rc.local file. 
 It is a shell script that is run when the system is started up. Type this code to open the file:
-```
+```bash
 $ sudo su
 # nano /etc/rc.local
 ```
 You'll see something like this:
-```
+```shell
 #!/bin/sh -e
 #
 # rc.local
@@ -182,7 +182,7 @@ You'll see something like this:
 exit 0
 ```
 Then put into this script the following code before 'exit 0' and after '# By default this script does nothing':
-```
+```shell
 sudo python /home/osmc/voldo.py &
 sudo python /home/osmc/volup.py &
 sudo python /home/osmc/Start.py &
