@@ -1,4 +1,4 @@
-# OSMC-Contro-Panel
+# OSMC-Control-Panel
 ## Introduction
 
 Hello guys, this is my guide to an OSMC-Control-Panel, which allows you to control your music with your easy-to-build Control-Panel. After you built it, you're able to Play/Pause a song, let the previous or the next song play and even change the volume up and down.
