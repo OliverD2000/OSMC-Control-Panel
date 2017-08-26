@@ -1,11 +1,11 @@
 # OSMC-Contro-Panel
 ## Introduction
 
-Hello guys, this is my guide to an OSMC-Control-Panel which allows  you to control your music with your easy-to-build Control-Panel. After you built it you're able to Play/Pause a song, let the previous or the next song play and even change the volume up and down.
+Hello guys, this is my guide to an OSMC-Control-Panel, which allows you to control your music with your easy-to-build Control-Panel. After you built it, you're able to Play/Pause a song, let the previous or the next song play and even change the volume up and down.
 
-This is a private project shared for everyone who wants to build a Mulitmedia-Device for your living room or anywhere else. You need at least a little knowledge about electronics.I used a Windows Computer during the project. It is not tested for Mac in Linux system. Most of the time you do the same things in Windows as in Mac, but I try to put in links for Mac users. I'm not that familiar with Linux Systems so I can't provide links for Linux.
+This is a private project shared for everyone who wants to build a Mulitmedia-Device for your living room or anywhere else. You need at least a little knowledge about electronics.I used a Windows Computer during the project. It is not tested for Mac in Linux system. Most of the time the downloadable software can be used on Mac, too. Linux has different software or has the software you need already integrated.
 
-This project is exentdable as you wish, If you want to build also button for controlling the menu of OSMC itself, there will be a extension of this guide soon.
+This project is exentdable as you wish. If you want to build also button for controlling the menu of OSMC itself, there will be a extension of this guide soon.
 
 ## What you need
 
@@ -23,7 +23,7 @@ This project is exentdable as you wish, If you want to build also button for con
 
 ### Optional:
 
-* GPIO T-adapter plate (It's an adapter for the GPIO pins which you can plug onto the Breadboard . You see easier, where to plug in the buttons)
+* GPIO T-adapter plate (It's an adapter for the GPIO pins, which you can plug onto the Breadboard . You see easier, where to plug in the buttons)
 * GPIO rainbow Cable (Connection wire from GPIO pins to the T-adapter plate)
 * **DIY Starter Kit:** This is a Complete Kit that contains hardware parts like the wires, push buttons, GPIO T-adapter plate or the GPIO rainbow Cable. There're many different Starter Kits available but [here](https://www.amazon.de/Raspberry-Handbuch-Steckbrett-K%C3%BChlk%C3%B6rper-Komponenten/dp/B01MDJPGAZ) I have the link of the Starter Kit I use.  
 
@@ -34,17 +34,17 @@ For a test we use also:
 ## Preparing the microSD
 
 First of all you need to format your microSD, so that you can be sure that the microSD Card has no files on it.  
-I use [SD Card Formatter](https://www.sdcard.org/downloads/formatter_4/index.html) for this. Just click on the link  and download it. The program is nearly self-explanatory. Select the card you want to format and then press 'Format'.
+I use [SD Card Formatter](https://www.sdcard.org/downloads/formatter_4/index.html) for this. Just click on the link and download it. The program is nearly self-explanatory. Select the card you want to format and then press 'Format'.
 
-After you done this we have to install NOOBS onto the microSD Card. Download the .zip [here](https://www.raspberrypi.org/downloads/noobs/). It doesn't matter if you either install NOOBS or NOOBS Lite, because you need Internet Access to download and install OSMC anyway.
+After you've done this, we have to install NOOBS onto the microSD Card. Download the .zip [here](https://www.raspberrypi.org/downloads/noobs/). It doesn't matter if you either install NOOBS or NOOBS Lite, because you need Internet Access to download and install OSMC anyway.
 
 Once you've donwloaded the NOOBS zip file, you'll need to extract the files from the .zip. You can use a tool like [7-Zip](http://7-zip.org/download.html).  
 Then copy the extracted files onto the SD Card, but every file each, not as one folder.
 
 ## First boot
-Before you boot your Raspberry Pi, make sure you've plugged a Keyboard, Mouse and Monitor to it. If you've checked everything you can plug in the Power Supply Unit and the Raspberry Pi will start.
+Before you boot your Raspberry Pi, make sure you've plugged the microSD Card, a Keyboard, Mouse and Monitor to it. If you've checked everything you can plug in the Power Supply Unit and the Raspberry Pi will start.
 
-On the first boot it will display a window in which you can connect the Raspberry Pi to your Wifi Network. You can also plug in a LAN-Cable, which makes the process easier. After that you can see serveral distributions (Operating Systems) which you can install. Select OSMC and let it install.
+On the first boot, it will display a window in which you can connect the Raspberry Pi to your Wifi Network. You can also plug in a LAN-Cable, which makes the process easier. After that you can see serveral distributions (Operating Systems) which you can install. Select OSMC and let it install.
 
 After installation it'll start the system and you are nearly ready to do your own things with OSMC. Select your Location and Timezone. Don't change your Hostname.  
 Now your ready to explore OSMC!
@@ -56,7 +56,7 @@ There're two ways to access the command line
 * Logging in over the network via SSH using client on a Windows system.
 
 In order to work and test scripts easier we'll use the second way.
-First we need to install an SSH Client called [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).  
+First we need to install an SSH Client on your Computer called [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html).  
 Linux and OS X users should have an SSH Client already. 
 
 Next we need the IP address of the Rapsberry Pi. You can find your device's IP address in the OSMC Settings:   
@@ -70,7 +70,7 @@ For more information and a Tutorial for Linux/OS X click [here](https://osmc.tv/
 
 ## Install RPi.GPIO
 
-The first thing we have to do in the command line is to install the RPi.GPIO module. You need to it install in order to work with the GPIO pins.  
+The first thing we have to do in the command line is to install the RPi.GPIO module. You need to install it in order to work with the GPIO pins.  
 Put this commands each  into the command line:
 
 ```bash
@@ -82,7 +82,7 @@ $ sudo su
 It may showed some warnings but it will be sucessfully installed .
 
 ### RPi.GPIO 
-To get to known with GPIO pins here is useful picture of the GPIO pins and their labels.  
+To get to known with GPIO pins, here is useful picture of the GPIO pins and their labels.  
 ![GPIO pin](https://github.com/OliverD2000/OSMC-Control-Panel/blob/master/images/RPi3_GPIOs.png)
 
 
@@ -114,7 +114,7 @@ If not then check your circuit and your code once again.
 ## Building the actual circuit
 Finally we can build the actual circuit. It looks like this.
 
-**Picture**
+![Circuit](https://github.com/OliverD2000/OSMC-Control-Panel/blob/master/images/circuit%20diagram.png)
 
 Make sure you connect every button to one GPIO pin that is free to use and to a 'Ground' pin.  
 If you look on the picture from the paragraph 'RPi.GPIO' you can see that there are some pins, that have a certain function.
@@ -125,8 +125,8 @@ The circuit isn't that complicated because you don't need a difficult circuit he
 
 ## Python scripts
 
-After being done with building the circuit we have to write the python scripts .
-In this repository is every python script you need  for your Control-Panel.  
+After being done with building the circuit, we have to write the python scripts.
+In this repository is every python script you need for your Control-Panel.  
 You can either donwload them on your Raspberry Pi and place them in **'/home/osmc/'** or you write them yourself by using the integrated text editor **'Nano'**.
 
 The first way is easy and is already explained. The second way is also not that hard to do.  
@@ -143,13 +143,13 @@ $ sudo su
 # nano /home/osmc/example.py
 ```
 
-When you wrote one code into one script you can save that code with **CTRl+X** and press enter if you don't want to change the name of the script.
-After this you have to change the file permissions. Type:
+When you've wrote one code into one script you can save that code with **CTRl+X** and press enter if you don't want to change the name of the script.
+After this, you have to change the file permissions. Type:
 ```bash
 # chmod +x /home/osmc/*.py
 ```
 
-If you want to test the script type into the command line:
+If you want to test the script, type into the command line:
 ```bash
 #  python /home/osmc/example.py
 ```
@@ -200,5 +200,5 @@ If not then check the 'rc.local' file again and your python scripts.
 ## Optional possibilities
 
 If you want to go one step further you can now try to write a script for controlling the OSMC menu with buttons.
-In the abstract you only have to do change the 'xbmc-send' command.  
+In the abstract you only have to change the 'xbmc-send' command.  
 But that's something I didn't try yet.
