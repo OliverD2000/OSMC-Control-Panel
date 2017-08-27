@@ -202,3 +202,9 @@ If not then check the 'rc.local' file again and your python scripts.
 If you want to go one step further you can now try to write a script for controlling the OSMC menu with buttons.
 In the abstract you only have to change the 'xbmc-send' command.  
 But that's something I didn't try yet.
+
+## Main sources
+* RPi.GPIO Pin picture: https://goo.gl/5VLTmJ
+* xbmc-send commands: https://goo.gl/Ufafqx
+* Running scripts on start up with rc.local: https://goo.gl/3vXNW6
+* OSMC Wiki: https://osmc.tv/wiki/
